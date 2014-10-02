@@ -1,0 +1,23 @@
+[core]
+    excludesfile = ~/.gitignore
+    autocrlf = input
+    quotepath = false
+    trustctime = false
+    editor = vim
+[alias]
+    co = checkout
+    s = status -s
+    st = status -sb
+    branches = branch -a --color -v
+    tags = tag -l
+    remotes = remote -v
+    track = checkout --track # track a remote branch. ex) git track origin/serverfix
+    untracked = ls-files --others --exclude-standard
+[credential]
+    helper = osxkeychain
+[push]
+    default = simple # default in git 2.0
+[include]
+  path = .gitconfig.local
+[ghq]
+    root = ~/repos
