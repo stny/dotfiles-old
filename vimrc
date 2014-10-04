@@ -13,6 +13,13 @@ NeoBundleCheck
 syntax enable
 set number
 set numberwidth=5
+set laststatus=2
+set ruler
+set showcmd
+set incsearch
+set autoread
+set autowrite
+set diffopt+=vertical
 
 set nobackup
 set nowritebackup
@@ -20,3 +27,16 @@ set noswapfile
 
 set splitbelow
 set splitright
+
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+
+let mapleader=","
+
+augroup misc
+  autocmd!
+"  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd FileType make,go setlocal noexpandtab
+augroup END
