@@ -6,6 +6,9 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'croaky/vim-colors-github'
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
@@ -15,6 +18,7 @@ set number
 set numberwidth=5
 set laststatus=2
 set ruler
+set cursorline
 set showcmd
 set incsearch
 set autoread
@@ -37,6 +41,9 @@ let mapleader=","
 
 augroup misc
   autocmd!
-"  autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd FileType make,go setlocal noexpandtab
 augroup END
+
+colorscheme github
+highlight SpecialKey cterm=none ctermfg=253 ctermbg=none
+highlight CursorLine cterm=none ctermfg=none ctermbg=255
