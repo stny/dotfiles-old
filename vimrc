@@ -18,6 +18,11 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'google/vim-ft-go'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
+NeoBundle 'othree/html5.vim'
+NeoBundle 'tpope/vim-eunuch'
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -40,6 +45,7 @@ set incsearch
 set autoread
 set autowrite
 set diffopt+=vertical
+set lazyredraw
 
 set nobackup
 set nowritebackup
@@ -54,11 +60,35 @@ set shiftround
 set expandtab
 
 let mapleader=","
+cnoremap <C-a> <home>
+cnoremap <C-e> <end>
+noremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap j gj
+nnoremap k gk
+inoremap jj <esc>
+" start and end of line
+noremap H ^
+nnoremap L $
+" Copy
+vnoremap <leader>y :w !pbcopy<CR><CR>
+" Clean whitespace
+map <leader>W  :%s/\s\+$//<CR>:let @/=''<CR>
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+" switch the recent files
+nnoremap <leader><leader> <c-^>
+" Gundo
+nnoremap <leader>u :GundoToggle<CR>
 
 augroup misc
   autocmd!
   autocmd FileType make,go setlocal noexpandtab
   autocmd FileType vim setlocal foldmethod=marker
+  autocmd WinLeave,InsertEnter * set nocursorline
+  autocmd WinEnter,InsertLeave * set cursorline
 augroup END
 
 " Color {{{
@@ -66,18 +96,11 @@ colorscheme github
 highlight SpecialKey cterm=none ctermfg=253 ctermbg=none
 highlight CursorLine cterm=none ctermfg=none ctermbg=255
 " }}}
-
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
-
-noremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " Fold {{{
 set foldcolumn=2
 set foldlevelstart=0
@@ -89,6 +112,15 @@ vnoremap <Space> za
 " Tagbar {{{
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 nmap <F8> :TagbarToggle<CR>
+" }}}
+" Snippet {{{
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="vertical"
+" }}}
+" Git Gutter {{{
+let g:gitgutter_eager = 0
 " }}}
 
 let g:go_fmt_command = "goimports"
