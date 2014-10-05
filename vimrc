@@ -58,11 +58,14 @@ let mapleader=","
 augroup misc
   autocmd!
   autocmd FileType make,go setlocal noexpandtab
+  autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
+" Color {{{
 colorscheme github
 highlight SpecialKey cterm=none ctermfg=253 ctermbg=none
 highlight CursorLine cterm=none ctermfg=none ctermbg=255
+" }}}
 
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
@@ -74,6 +77,19 @@ noremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" Fold {{{
+set foldcolumn=2
+set foldlevelstart=0
+
+" open/close
+nnoremap <Space> za
+vnoremap <Space> za
+" }}}
+" Tagbar {{{
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+nmap <F8> :TagbarToggle<CR>
+" }}}
 
 let g:go_fmt_command = "goimports"
 
