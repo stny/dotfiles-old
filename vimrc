@@ -23,6 +23,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
 NeoBundle 'othree/html5.vim'
 NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-rails'
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -86,6 +87,7 @@ nnoremap <leader>u :GundoToggle<CR>
 augroup misc
   autocmd!
   autocmd FileType make,go setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd FileType vim setlocal foldmethod=marker
   autocmd WinLeave,InsertEnter * set nocursorline
   autocmd WinEnter,InsertLeave * set cursorline
