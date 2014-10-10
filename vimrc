@@ -98,11 +98,6 @@ colorscheme github
 highlight SpecialKey cterm=none ctermfg=253 ctermbg=none
 highlight CursorLine cterm=none ctermfg=none ctermbg=255
 " }}}
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-endif
 " Fold {{{
 set foldcolumn=2
 set foldlevelstart=0
@@ -111,6 +106,11 @@ set foldlevelstart=0
 nnoremap <Space> za
 vnoremap <Space> za
 " }}}
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
 " Tagbar {{{
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 nmap <F8> :TagbarToggle<CR>
@@ -124,8 +124,9 @@ let g:UltiSnipsEditSplit="vertical"
 " Git Gutter {{{
 let g:gitgutter_eager = 0
 " }}}
-
+" Go {{{
 let g:go_fmt_command = "goimports"
+" }}}
 
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
