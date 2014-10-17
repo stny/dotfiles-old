@@ -16,9 +16,9 @@
 	<key>FontWidthSpacing</key>
 	<real>1.004032258064516</real>
 	<key>ProfileCurrentVersion</key>
-	<real>2.02</real>
+	<real>2.04</real>
 	<key>name</key>
-	<string>Basic</string>
+	<string>light</string>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>
