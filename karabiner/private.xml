@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>TERMINAL</appname>
+    <equal>com.apple.Terminal</equal>
+    <equal>com.googlecode.iterm2</equal>
+  </appdef>
+  <item>
+    <name>Change Escape to EISUU &amp; Escape (PRIVATE)</name>
+    <appendix>Be simultaneously switched to normal mode and changed input source</appendix>
+    <only>TERMINAL</only>
+    <inputsource_only>JAPANESE</inputsource_only>
+    <identifier>private.vim_setting_for_japanese</identifier>
+    <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, ModifierFlag::CONTROL_L,
+      KeyCode::ESCAPE, KeyCode::JIS_EISUU
+    </autogen>
+  </item>
+</root>
