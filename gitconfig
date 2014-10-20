@@ -20,4 +20,4 @@
 [include]
   path = .gitconfig.local
 [ghq]
-    root = ~/repos
+    root = ~/code/repos
