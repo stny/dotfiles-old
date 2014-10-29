@@ -47,6 +47,7 @@ set autoread
 set autowrite
 set diffopt+=vertical
 set lazyredraw
+set history=50
 
 set nobackup
 set nowritebackup
