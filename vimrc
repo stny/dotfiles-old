@@ -48,6 +48,8 @@ set autowrite
 set diffopt+=vertical
 set lazyredraw
 set history=50
+set clipboard+=unnamed
+set backspace=2
 
 set nobackup
 set nowritebackup
