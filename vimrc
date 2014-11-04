@@ -130,6 +130,9 @@ let g:gitgutter_eager = 0
 " Go {{{
 let g:go_fmt_command = "goimports"
 " }}}
+" Markdown {{{
+nnoremap <leader>m :silent !open -a 'Marked 2.app' '%:p'<cr>
+" }}}
 
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
