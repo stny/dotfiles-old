@@ -24,6 +24,7 @@ NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
 NeoBundle 'othree/html5.vim'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'Align'
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -43,6 +44,7 @@ set ruler
 set cursorline
 set showcmd
 set incsearch
+set hlsearch
 set autoread
 set autowrite
 set diffopt+=vertical
