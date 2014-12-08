@@ -24,9 +24,11 @@ NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
 NeoBundle 'othree/html5.vim'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'Align'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'plasticboy/vim-markdown'
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
