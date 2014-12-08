@@ -25,6 +25,8 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'Align'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'sjl/gundo.vim'
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
