@@ -13,6 +13,7 @@
     remotes = remote -v
     track = checkout --track # track a remote branch. ex) git track origin/serverfix
     untracked = ls-files --others --exclude-standard
+    amend = commit --amend --reuse-message=HEAD
 [credential]
     helper = osxkeychain
 [push]
