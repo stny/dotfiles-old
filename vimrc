@@ -28,6 +28,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'ap/vim-css-color'
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -60,6 +61,7 @@ set backspace=2
 set nobackup
 set nowritebackup
 set noswapfile
+set noundofile
 
 set splitbelow
 set splitright
@@ -138,6 +140,11 @@ let g:go_fmt_command = "goimports"
 " }}}
 " Markdown {{{
 nnoremap <leader>m :silent !open -a 'Marked 2.app' '%:p'<cr>
+let g:vim_markdown_folding_disabled=1
+" }}}
+" NERD Tree {{{
+noremap  <F2> :NERDTreeToggle<cr>
+inoremap <F2> <esc>:NERDTreeToggle<cr>
 " }}}
 
 if filereadable($HOME . "/.vimrc.local")
