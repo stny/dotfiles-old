@@ -10,6 +10,7 @@ coreos:
       mask: true
     - name: docker-tcp.socket
       command: start
+      enable: yes
       content: |
           [Unit]
           Description=Docker Socket for the API
