@@ -29,6 +29,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'ap/vim-css-color'
+NeoBundle 'rking/ag.vim'
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -121,6 +122,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 " Tagbar {{{
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
