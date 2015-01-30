@@ -1,10 +1,11 @@
-notification :tmux,
+notification(
+  :tmux,
   timeout: 1,
   display_message: true,
   default_message_color: 'black',
   #color_location: %w[status-left-bg pane-active-border-fg pane-border-fg]
   color_location: %w[status-left-fg],
-  failed_message_color: 'white'
+  failed_message_color: 'white') if ENV['TMUX']
 
 guard :minitest, spring: true, all_on_start: false do
   # with Minitest::Unit
