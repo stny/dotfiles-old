@@ -30,6 +30,9 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'ap/vim-css-color'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'altercation/vim-colors-solarized'
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -43,6 +46,7 @@ syntax enable
 set encoding=utf-8
 set number
 set numberwidth=5
+set notitle
 set laststatus=2
 set modeline
 set modelines=5
@@ -106,7 +110,9 @@ augroup misc
 augroup END
 
 " Color {{{
-colorscheme github
+"colorscheme github
+set background=dark
+colorscheme solarized
 highlight SpecialKey cterm=none ctermfg=253 ctermbg=none
 highlight CursorLine cterm=none ctermfg=none ctermbg=255
 " }}}
@@ -147,6 +153,10 @@ let g:vim_markdown_folding_disabled=1
 " NERD Tree {{{
 noremap  <F2> :NERDTreeToggle<cr>
 inoremap <F2> <esc>:NERDTreeToggle<cr>
+" }}}
+" airline {{{
+let g:airline_theme='luna'
+let g:airline_powerline_fonts=1
 " }}}
 
 if filereadable($HOME . "/.vimrc.local")
