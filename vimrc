@@ -110,11 +110,16 @@ augroup misc
 augroup END
 
 " Color {{{
+" Github {{{
 "colorscheme github
+"highlight SpecialKey cterm=none ctermfg=253 ctermbg=none
+"highlight CursorLine cterm=none ctermfg=none ctermbg=255
+" }}}
+" Solarized {{{
 set background=dark
+"let g:solarized_termcolors=256
 colorscheme solarized
-highlight SpecialKey cterm=none ctermfg=253 ctermbg=none
-highlight CursorLine cterm=none ctermfg=none ctermbg=255
+" }}}
 " }}}
 " Fold {{{
 set foldcolumn=2
