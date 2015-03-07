@@ -24,6 +24,7 @@ NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
 NeoBundle 'othree/html5.vim'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-haml'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'godlygeek/tabular'
@@ -33,6 +34,9 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/tComment'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'junegunn/vim-easy-align'
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
