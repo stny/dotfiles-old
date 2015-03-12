@@ -20,5 +20,7 @@
     default = simple # default in git 2.0
 [diff]
     renames = copies
+[fetch]
+    prune = true
 [include]
     path = .gitconfig.local
