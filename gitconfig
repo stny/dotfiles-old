@@ -9,6 +9,7 @@
     s = status -s
     st = status -sb
     branches = branch -a --color -v
+    remotebranches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
     tags = tag -l
     remotes = remote -v
     track = checkout --track # track a remote branch. ex) git track origin/serverfix
@@ -17,7 +18,7 @@
 [credential]
     helper = osxkeychain
 [push]
-    default = simple # default in git 2.0
+    default = current
 [diff]
     renames = copies
 [fetch]
