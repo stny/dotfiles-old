@@ -133,9 +133,10 @@ set foldlevelstart=0
 nnoremap <Space> za
 vnoremap <Space> za
 " }}}
+set grepprg=grep\ -rnH\ --exclude=tags
 if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
   let g:ctrlp_use_caching = 0
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
