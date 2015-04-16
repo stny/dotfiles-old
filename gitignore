@@ -6,3 +6,5 @@ Icon
 
 *.o
 *.a
+
+.env
