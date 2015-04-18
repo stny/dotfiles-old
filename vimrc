@@ -104,10 +104,18 @@ nnoremap <leader><leader> <c-^>
 " Gundo
 nnoremap <leader>u :GundoToggle<CR>
 
+" generate ctags file
+map <leader>ct :!ctags -R .<CR>
+
+" ruby test
+nnoremap <leader>t :Dispatch ruby -Itest %<CR>
+
 augroup misc
   autocmd!
   autocmd FileType make,go setlocal noexpandtab
   autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd FileType markdown setlocal spell
+  autocmd FileType gitcommit setlocal spell
   autocmd FileType vim setlocal foldmethod=marker
   autocmd WinLeave,InsertEnter * set nocursorline
   autocmd WinEnter,InsertLeave * set cursorline
